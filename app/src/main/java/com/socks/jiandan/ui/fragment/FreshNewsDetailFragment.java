@@ -2,6 +2,7 @@ package com.socks.jiandan.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -94,7 +95,13 @@ public class FreshNewsDetailFragment extends BaseFragment {
 
     }
 
-    private static String getHtml(FreshNews freshNews, String content) {
+    private static String cleanContent(String content){
+        int end = content.indexOf("<div class=\"share-links\">");
+        return content.substring(0,end);
+    }
+
+    private static String getHtml(FreshNews freshNews, String orginContent) {
+        String content = cleanContent(orginContent);
         final StringBuilder sb = new StringBuilder();
         sb.append("<!DOCTYPE html>");
         sb.append("<html dir=\"ltr\" lang=\"zh\">");

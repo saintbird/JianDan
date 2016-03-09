@@ -78,7 +78,7 @@ object, embed { display:none; }
 
 /* Main Content */
 
-#maincontent .post {border-bottom: 1px solid #DDD; padding:5px 10px;font-size: 13px;font-family: "Microsoft YaHei","Hiragino Sans GB W3",Tahoma,Arial;}
+#maincontent .post {padding:5px 10px;font-size: 13px;font-family: "Microsoft YaHei","Hiragino Sans GB W3",Tahoma,Arial;}
 
 #maincontent hr{color: #DDD; border: none; border-bottom: 1px dashed #DEDEDE; margin-bottom: 5px;}
 

@@ -38,16 +38,9 @@
             android:name=".ui.PushCommentActivity"
             android:label="@string/title_activity_push_comment" />
         <activity
-            android:name=".ui.ImageDetailActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ImageDetailActivityTheme" />
-        <activity
             android:name=".ui.FreshNewsDetailActivity"
             android:label="@string/title_activity_fresh_news_detail"
             android:theme="@style/FreshNewsDetailActivityTheme" />
-        <activity
-            android:name=".ui.VideoDetailActivity"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.SettingActivity"
             android:screenOrientation="portrait" />

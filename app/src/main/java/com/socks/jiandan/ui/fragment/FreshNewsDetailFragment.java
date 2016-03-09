@@ -17,8 +17,6 @@ import com.socks.jiandan.R;
 import com.socks.jiandan.base.BaseFragment;
 import com.socks.jiandan.model.FreshNews;
 import com.socks.jiandan.net.Request4FreshNewsDetail;
-import com.socks.jiandan.ui.CommentListActivity;
-import com.socks.jiandan.utils.ShareUtil;
 import com.socks.jiandan.utils.String2TimeUtil;
 import com.victor.loading.rotate.RotateLoading;
 
@@ -147,29 +145,5 @@ public class FreshNewsDetailFragment extends BaseFragment {
         if (webView != null) {
             webView.onPause();
         }
-    }
-
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_fresh_news_detail, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.action_comment:
-                Intent intent = new Intent(getActivity(), CommentListActivity.class);
-                intent.putExtra(DATA_THREAD_ID, freshNews.getId());
-                intent.putExtra(DATA_IS_FROM_FRESH_NEWS, true);
-                startActivity(intent);
-                return true;
-            case R.id.action_share:
-                ShareUtil.shareText(getActivity(), freshNews.getTitle() + " " + freshNews.getUrl());
-                return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

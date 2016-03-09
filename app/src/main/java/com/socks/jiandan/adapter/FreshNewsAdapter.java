@@ -27,7 +27,6 @@ import com.socks.jiandan.net.Request4FreshNews;
 import com.socks.jiandan.net.RequestManager;
 import com.socks.jiandan.ui.FreshNewsDetailActivity;
 import com.socks.jiandan.utils.NetWorkUtil;
-import com.socks.jiandan.utils.ShareUtil;
 import com.socks.jiandan.utils.ShowToast;
 import com.socks.jiandan.view.imageloader.ImageLoadProxy;
 
@@ -95,16 +94,8 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
         holder.tv_title.setText(freshNews.getTitle());
         holder.tv_info.setText(freshNews.getAuthor().getName() + "@" + freshNews.getTags()
                 .getTitle());
-        holder.tv_views.setText("浏览" + freshNews.getCustomFields().getViews() + "次");
 
         if (isLargeMode) {
-            holder.tv_share.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ShareUtil.shareText(mActivity, freshNews.getTitle() + " " + freshNews.getUrl());
-                }
-            });
-
             holder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -197,11 +188,6 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
         TextView tv_title;
         @InjectView(R.id.tv_info)
         TextView tv_info;
-        @InjectView(R.id.tv_views)
-        TextView tv_views;
-        @Optional
-        @InjectView(R.id.tv_share)
-        TextView tv_share;
         @InjectView(R.id.img)
         ImageView img;
         @Optional
